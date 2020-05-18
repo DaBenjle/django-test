@@ -1,7 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from .models import ToDoList
 
-def index(request, id):
-    list = ToDoList.objects.get(id=id)
-    return HttpResponse("Main View: " + list.__str__())
+def index(request):
+    context = {}
+    return render(request, 'main/base.html', context)
+
+def special(request):
+    context = {}
+    return render(request, 'main/special.html', context)
