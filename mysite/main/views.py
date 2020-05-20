@@ -6,6 +6,6 @@ def index(request):
     context = {}
     return render(request, 'main/base.html', context)
 
-def special(request):
-    context = {}
+def special(request, num):
+    context = {'num': num}
     return render(request, 'main/special.html', context)
